@@ -1,0 +1,422 @@
+/* Reset CSS : supprime les marges/paddings par défaut des navigateurs */
+/* box-sizing: border-box fait que le padding est inclus dans la largeur totale */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style global du body :
+   - font-family : police utilisée sur tout le site
+   - background-color : fond très sombre (quasi noir avec une teinte bleue)
+   - color : texte en gris clair pour contraster avec le fond sombre
+   - line-height : espacement entre les lignes pour une meilleure lisibilité */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #0f0f1a;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* Réinitialisation des liens : pas de soulignement, couleur gris clair */
+a {
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
+
+/*NAVBAR : Barre de navigation en haut de la page   */
+/* La navbar utilise flexbox pour espacer le logo et les liens
+   - position: sticky + top: 0 : la barre reste visible quand on scrolle
+   - z-index: 100 : la barre passe au-dessus du reste du contenu */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background-color: #13131f;
+  border-bottom: 1px solid #2a2a3d;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo en violet (#a78bfa) avec du texte en gras */
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #a78bfa;
+}
+
+/* Liste des liens sans puces, disposés horizontalement avec un gap de 28px */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+/* Style des liens de navigation :
+   - Couleur gris clair par défaut
+   - Transition douce sur le changement de couleur au survol */
+.nav-links a {
+  color: #c4c4d4;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+/* Au survol, le lien passe en violet pour indiquer qu'il est cliquable */
+.nav-links a:hover {
+  color: #a78bfa;
+}
+
+
+/* HERO : Section d'accueil (la première chose vue)  */
+
+
+/* Section centrée avec beaucoup de padding en haut pour créer un espace aéré */
+.hero {
+  text-align: center;
+  padding: 100px 20px 80px;
+}
+
+/* Avatar : cercle avec un dégradé violet → bleu
+   - border-radius: 50% transforme le carré en cercle
+   - display: flex centre l'emoji à l'intérieur */
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto 24px;
+}
+
+/* Titre principal : grand, en gras, en blanc */
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Le <span> dans le h1 est en violet pour mettre le prénom en valeur */
+.hero h1 span {
+  color: #a78bfa;
+}
+
+/* Tagline : sous-titre plus petit et discret en gris */
+.hero .tagline {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #8888aa;
+}
+
+/* Conteneur des badges : alignés horizontalement, avec retour à la ligne si besoin */
+.hero .badges {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Style d'un badge individuel : fond sombre, bordure subtile, coins arrondis (pilule) */
+.badge {
+  background-color: #1e1e30;
+  border: 1px solid #3a3a5c;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  color: #a78bfa;
+}
+
+
+/* SECTIONS : Style commun à toutes les sections     */
+
+
+/* Chaque section est centrée avec une largeur max de 860px
+   pour éviter que le texte soit trop large sur grand écran */
+section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+/* Titre de section : en blanc, avec un trait horizontal décoratif après le texte */
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+/* À PROPOS : Section de présentation personnelle    */
+
+
+/* about-layout : flexbox avec 2 colonnes
+   - 260px pour l'image de profil
+   - le texte prend le reste de l'espace */
+.about-layout {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* about-image : l'image de profil
+   - width: 260px : largeur fixe
+   - flex-shrink: 0 : l'image ne rétrécit pas
+   - object-fit: cover : remplit la zone sans déformer l'image
+   - border-radius: 14px : coins arrondis */
+.about-image {
+  width: 260px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid #2a2a3d;
+  background: #13131f;
+}
+
+/* about-text : paragraphe de présentation
+   - border-left : barre violette à gauche
+   - fond légèrement différent pour se démarquer */
+.about-text {
+  font-size: 1rem;
+  color: #aaaacc;
+  background-color: #13131f;
+  border-left: 3px solid #a78bfa;
+  border-radius: 8px;
+  padding: 20px 24px;
+}
+
+
+/* COMPÉTENCES : Grille de cartes de compétences     */
+
+
+/* Flexbox responsive :
+   - Les cartes passent à la ligne automatiquement
+   - Chaque carte fait au moins 150px et s'étend pour remplir l'espace */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Chaque carte de compétence prend la même largeur */
+.skills-grid .skill-card {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Style d'une carte de compétence :
+   - Fond sombre avec bordure subtile
+   - transition : animation fluide au survol */
+.skill-card {
+  background-color: #13131f;
+  border: 1px solid #2a2a3d;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+/* Effet au survol : la bordure devient violette et la carte monte légèrement */
+.skill-card:hover {
+  border-color: #a78bfa;
+  transform: translateY(-3px);
+}
+
+/* Icône emoji dans la carte de compétence */
+.skill-card .icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+/* Nom de la compétence affiché sous l'icône */
+.skill-card .name {
+  font-size: 0.9rem;
+  color: #ccccee;
+  font-weight: 600;
+}
+
+/* Barre de progression : conteneur (fond gris sombre) */
+.skill-bar {
+  margin-top: 10px;
+  height: 4px;
+  background-color: #2a2a3d;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Barre de progression : remplissage avec dégradé violet → bleu
+   La largeur (width) est définie en inline style dans le HTML (ex: 70%) */
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #a78bfa, #60a5fa);
+  border-radius: 4px;
+}
+
+
+/* PROJETS : Galerie de cartes de projets            */
+
+
+/* Flexbox responsive pour les projets :
+   - Les cartes passent à la ligne automatiquement
+   - Chaque carte fait au moins 240px */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Chaque carte de projet prend la même largeur */
+.projects-grid .project-card {
+  flex: 1;
+  min-width: 240px;
+}
+
+/* Carte de projet : similaire aux cartes de compétence
+   mais avec des coins plus arrondis (14px) et plus de padding */
+.project-card {
+  background-color: #13131f;
+  border: 1px solid #2a2a3d;
+  border-radius: 14px;
+  padding: 24px;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+/* Effet au survol : bordure bleue et la carte monte légèrement */
+.project-card:hover {
+  border-color: #60a5fa;
+  transform: translateY(-4px);
+}
+
+/* Icône emoji du projet */
+.project-card .proj-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+/* Titre du projet en blanc */
+.project-card h3 {
+  font-size: 1.05rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+/* Description du projet en gris discret */
+.project-card p {
+  font-size: 0.88rem;
+  color: #8888aa;
+  margin-bottom: 14px;
+}
+
+/* Tags des technologies utilisées (ex: HTML, CSS, Python)
+   - Petites étiquettes avec fond sombre et texte bleu */
+.tag {
+  display: inline-block;
+  background-color: #1e1e30;
+  border: 1px solid #3a3a5c;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  color: #60a5fa;
+  margin: 2px;
+}
+
+
+/* CONTACT : Section avec les boutons de contact     */
+
+
+/* Boîte de contact : encadré centré avec fond sombre */
+.contact-box {
+  background-color: #13131f;
+  border: 1px solid #2a2a3d;
+  border-radius: 14px;
+  padding: 32px;
+  text-align: center;
+}
+
+/* Texte d'invitation dans la boîte de contact */
+.contact-box p {
+  color: #8888aa;
+  margin-bottom: 24px;
+}
+
+/* Disposition des boutons de contact : en ligne, centrés, avec retour à la ligne si nécessaire */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Style commun des boutons de contact :
+   - inline-flex pour aligner l'emoji et le texte sur la même ligne
+   - transition douce au survol */
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+  border: none;
+}
+
+/* Effet au survol des boutons : légèrement transparent + monte de 2px */
+.contact-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* Bouton violet : dégradé pour le bouton Email */
+.btn-purple {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  color: #ffffff;
+}
+
+/* Bouton bleu : dégradé pour le bouton LinkedIn */
+.btn-blue {
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  color: #ffffff;
+}
+
+/* Bouton vert : dégradé pour le bouton GitHub */
+.btn-green {
+  background: linear-gradient(135deg, #34d399, #059669);
+  color: #ffffff;
+}
+
+
+/* FOOTER : Pied de page en bas du site              */
+
+
+/* Footer centré avec texte petit et discret */
+footer {
+  text-align: center;
+  padding: 28px;
+  color: #44445a;
+  font-size: 0.85rem;
+  border-top: 1px solid #1e1e30;
+}
+
+/* Les <span> dans le footer (cœur + prénom) sont en violet */
+footer span {
+  color: #a78bfa;
+}

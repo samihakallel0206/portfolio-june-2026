@@ -1,0 +1,251 @@
+<!doctype html>
+<!-- Ce fichier est le portfolio personnel créé pendant la Summer Academy 2026 -->
+<!-- Le document est en français (lang="fr") -->
+<html lang="fr">
+  <head>
+    <!-- Encodage des caractères en UTF-8 pour supporter les accents français (é, è, à, etc.) -->
+    <meta charset="UTF-8" />
+
+    <!-- Cette balise rend le site responsive (adapté aux écrans de téléphone et tablette) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- !Titre de la page qui apparaît dans l'onglet du navigateur -->
+    <title>Mon Portfolio</title>
+
+    <!--! Favicon : petite icône qui s'affiche dans l'onglet du navigateur (à remplacer par ton propre fichier) -->
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/7867/7867852.png" type="image/x-icon" />
+
+    <!-- !Lien vers la feuille de style CSS qui gère tout le design visuel de la page -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <!-- NAVBAR : Barre de navigation fixe en haut     -->
+    <!-- Elle contient le logo et les liens de menu    -->
+
+    <nav>
+      <!-- Logo / nom du site affiché à gauche de la barre -->
+      <div class="logo">Mon Portfolio</div>
+
+      <!-- Liste des liens de navigation -->
+      <!-- Chaque lien pointe vers une section de la page grâce aux ancres (#apropos, #competences, etc.) -->
+      <ul class="nav-links">
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- HERO : Section d'accueil principale           -->
+    <!-- C'est la première chose que le visiteur voit  -->
+
+    <div class="hero">
+      <!-- Avatar : emoji affiché dans un cercle avec un dégradé de couleurs -->
+      <div class="avatar">☠️</div>
+
+      <!-- Titre principal avec le prénom mis en valeur grâce au <span> (coloré en violet par le CSS) -->
+      <h1>Salut, moi c'est <span>Ton Prénom</span></h1>
+
+      <!-- Tagline : courte description sous le titre -->
+      <p class="tagline">
+        Élève en Summer Academy · Passionné(e) de tech · 16 ans
+      </p>
+
+      <!-- Badges : petites étiquettes qui montrent tes centres d'intérêt -->
+      <div class="badges">
+        <span class="badge">🎮 Gamer</span>
+        <span class="badge">💻 Coder</span>
+        <span class="badge">🎨 Créatif</span>
+        <span class="badge">📍 Tunis</span>
+      </div>
+    </div>
+
+
+    <!-- À PROPOS : Section de présentation personnelle -->
+    <!-- L'id="apropos" permet à la navbar de scroller  -->
+    <!-- directement vers cette section                 -->
+
+    <section id="apropos">
+      <!-- Titre de la section avec un emoji et une ligne décorative (gérée par le CSS ::after) -->
+      <h2 class="section-title">👤 À propos de moi</h2>
+
+      <!-- Layout en grille : image à gauche, texte à droite (sur grand écran) -->
+      <div class="about-layout">
+        <!-- Image de profil chargée depuis Unsplash (tu peux la remplacer par ta propre photo) -->
+        <img
+          class="about-image"
+          src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
+          alt="Photo de profil"
+        />
+
+        <!-- Texte de présentation — personnalise-le avec tes propres infos ! -->
+        <p class="about-text">
+          Bonjour ! Je m'appelle <strong>Ton Prénom</strong> et j'ai
+          <strong>16 ans</strong>. Je participe à la Summer Academy parce que je
+          veux apprendre à coder et créer des choses sympas avec la technologie.
+          En dehors du code, j'aime la musique, les jeux vidéo et passer du
+          temps avec mes amis. Cette page, c'est mon tout premier portfolio —
+          j'en suis fier !
+        </p>
+      </div>
+    </section>
+
+
+    <!-- COMPÉTENCES : Affiche tes skills sous forme   -->
+    <!-- de cartes avec des barres de progression       -->
+
+    <section id="competences">
+      <h2 class="section-title">⚡ Mes compétences</h2>
+
+      <!-- Grille responsive : les cartes se réarrangent automatiquement selon la taille de l'écran -->
+      <div class="skills-grid">
+
+        <!-- Carte de compétence : HTML -->
+        <!-- Chaque carte contient : un emoji (icon), un nom, et une barre de progression -->
+        <div class="skill-card">
+          <div class="icon">🌐</div>
+          <div class="name">HTML</div>
+          <!-- La barre de progression : la largeur (width) en % représente ton niveau -->
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width: 70%"></div>
+          </div>
+        </div>
+
+        <!-- Carte de compétence : CSS -->
+        <div class="skill-card">
+          <div class="icon">🎨</div>
+          <div class="name">CSS</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width: 55%"></div>
+          </div>
+        </div>
+
+        <!-- Carte de compétence : JavaScript -->
+        <div class="skill-card">
+          <div class="icon">⚙️</div>
+          <div class="name">JavaScript</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width: 30%"></div>
+          </div>
+        </div>
+
+        <!-- Carte de compétence : Python -->
+        <div class="skill-card">
+          <div class="icon">🐍</div>
+          <div class="name">Python</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width: 40%"></div>
+          </div>
+        </div>
+
+        <!-- Carte de compétence : Travail en équipe (soft skill) -->
+        <div class="skill-card">
+          <div class="icon">🤝</div>
+          <div class="name">Travail en équipe</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <!-- Carte de compétence : Créativité (soft skill) -->
+        <div class="skill-card">
+          <div class="icon">💡</div>
+          <div class="name">Créativité</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width: 85%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROJETS : Galerie de tes réalisations         -->
+    <!-- Chaque projet est présenté dans une carte     -->
+
+    <section id="projets">
+      <h2 class="section-title">🚀 Mes projets</h2>
+
+      <!-- Grille de projets : s'adapte automatiquement à l'écran -->
+      <div class="projects-grid">
+
+        <!-- Carte projet 1 : Mon premier site web -->
+        <div class="project-card">
+          <!-- Icône du projet -->
+          <div class="proj-icon">🌍</div>
+          <!-- Titre du projet -->
+          <h3>Mon premier site web</h3>
+          <!-- Description courte du projet -->
+          <p>
+            Une page HTML simple que j'ai créée pendant la Summer Academy. C'est
+            mon tout premier projet !
+          </p>
+          <!-- Tags : technologies utilisées dans ce projet -->
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+        </div>
+
+        <!-- Carte projet 2 : Jeu Snake -->
+        <div class="project-card">
+          <div class="proj-icon">🐍</div>
+          <h3>Jeu Snake en Python</h3>
+          <p>
+            Un petit jeu Snake que j'ai codé en Python pendant les ateliers.
+            Super fun à faire !
+          </p>
+          <span class="tag">Python</span>
+        </div>
+
+        <!-- Carte projet 3 : Quiz interactif -->
+        <div class="project-card">
+          <div class="proj-icon">🎯</div>
+          <h3>Quiz interactif</h3>
+          <p>
+            Un quiz sur mes sujets préférés, créé avec HTML et un peu de
+            JavaScript.
+          </p>
+          <span class="tag">HTML</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CONTACT : Section pour que les visiteurs      -->
+    <!-- puissent te contacter                         -->
+
+    <section id="contact">
+      <h2 class="section-title">✉️ Me contacter</h2>
+
+      <!-- Boîte de contact avec fond sombre et coins arrondis -->
+      <div class="contact-box">
+        <p>
+          Tu veux me parler, collaborer ou juste dire bonjour ? N'hésite pas !
+        </p>
+
+        <!-- Boutons de contact — remplace les liens "#" par tes vrais liens ! -->
+        <div class="contact-links">
+          <!-- Bouton Email : le lien "mailto:" ouvre l'application mail du visiteur -->
+          <a href="mailto:tonemail@exemple.com" class="contact-btn btn-purple"
+            >  📧Email</a
+          >
+          <!-- Bouton Instagram : remplace "#" par ton URL Instagram -->
+          <a href="#" class="contact-btn btn-pink">📸 Instagram</a>
+          <!-- Bouton GitHub : remplace "#" par ton URL GitHub -->
+          <a href="#" class="contact-btn btn-green">🐙 GitHub</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FOOTER : Pied de page avec crédits            -->
+
+    <footer>
+      <!-- Le <span> permet de colorer le cœur et le prénom en violet via le CSS -->
+      Fait avec <span>♥</span> pendant la Summer Academy 2026 · par
+      <span>Ton Prénom</span>
+    </footer>
+  </body>
+</html>
